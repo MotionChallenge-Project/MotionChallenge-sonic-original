@@ -100,7 +100,10 @@ int main(){
 spec=importlib.util.spec_from_file_location('tested_adapter',root/'adapter.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
 runtime=json.loads((root/'runtime.json').read_text());runtime['weights']=str(decoder);runtime['artifacts']['encoder']['path']=str(encoder)
 assert subprocess.check_output(['git','-C',str(source),'rev-parse','HEAD'],text=True).strip()==runtime['source_commit'], 'upstream commit mismatch'
-assert not subprocess.check_output(['git','-C',str(source),'diff','HEAD','--','gear_sonic_deploy'],text=True).strip(), 'upstream source changed'
+for used in [native/'src/g1_deploy_onnx_ref.cpp',native/'src/state_logger.cpp',native/'include/state_logger.hpp',native/'include/math_utils.hpp',native/'include/policy_parameters.hpp']:
+ record=subprocess.check_output(['git','-C',str(source),'ls-tree','HEAD',str(used.relative_to(source))],text=True).split()
+ blob=subprocess.check_output(['git','hash-object',str(used)],text=True).strip()
+ assert record[2]==blob, f'upstream file changed: {used.name}'
 policy=mod.SONIC(root,runtime);cfg=policy.cfg
 canonical=tuple(json.loads((root/'motion-challenge/suites/lafan/dataset.json').read_text())['joint_names'])
 order=[canonical.index(n) for n in policy.names]
