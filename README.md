@@ -29,3 +29,7 @@ Use the upstream commit recorded in `provenance.json`.
 [NVlabs/GR00T-WholeBodyControl](https://github.com/NVlabs/GR00T-WholeBodyControl/blob/45c03facbf848e0c743091b7d9c17952096ff908/README.md) · [model_decoder.onnx](https://huggingface.co/nvidia/GEAR-SONIC/blob/6733128a3d8a523b1418b06bca3cdf61c8b0987f/sonic_v1_1/model_decoder.onnx). Author-released checkpoint.
 
 The adapter pins this published artifact by SHA256. Artifact identity is separate from inference parity.
+
+One `uv run evaluate.py` produces one verified `result.json`: success, completion,
+three MPBPE alignments through first failure and the same three over the full motion.
+Both scopes use the same checkpoint and source revision; no branch switching is needed.
