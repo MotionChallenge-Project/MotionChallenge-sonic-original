@@ -13,7 +13,7 @@ The root `motion-challenge` submodule owns datasets, physics, failure rules and 
 Local weights are reused; downloads are hash-checked. Results are stored outside Git.
 Use `--weights PATH --data PATH --offline` for cached artifacts.
 
-[Provenance](provenance.json) · [Website](https://motion-challenge-project.github.io/motion-challenge-project/)
+[Provenance](provenance.json)
 
 Use `--weights DECODER --artifact encoder=ENCODER --offline` for local components.
 Use `--termination none` for complete trajectories after a tracking failure.
