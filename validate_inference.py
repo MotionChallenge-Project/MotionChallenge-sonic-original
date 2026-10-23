@@ -13,6 +13,19 @@ from motion_challenge.adapters.onnx import vector
 
 native=source/'gear_sonic_deploy/src/g1/g1_deploy_onnx_ref'
 main=(native/'src/g1_deploy_onnx_ref.cpp').read_text()
+
+config_path = source / 'gear_sonic_deploy/policy/release/observation_config.yaml'
+config_text = config_path.read_text()
+dimensions = {name:int(size) for name,size in re.findall(r'\{"([^"\n]+)", (\d+),',main)}
+section = config_text.split('encoder_observations:',1)[1].split('encoder_modes:',1)[0]
+assert 'enabled: false' not in section
+offsets = {}; total = 0
+for name in re.findall(r'- name: "([^"]+)"', section):
+ offsets[name] = total; total += dimensions[name]
+assert total == 1762
+orientation_offset = offsets['motion_anchor_orientation_10frame_step5']
+assert offsets['motion_joint_positions_10frame_step5']==4 and offsets['motion_joint_velocities_10frame_step5']==294
+
 logger=(native/'src/state_logger.cpp').read_text()
 header=(native/'include/state_logger.hpp').read_text()
 def extract(text, marker):
@@ -95,16 +108,18 @@ int main(){
  }
 }
 '''
+cpp=cpp.replace('enc,584,10,1,mode',f'enc,{orientation_offset},10,1,mode')
 # This harness uses extracted author gatherers and logger padding verbatim;
 # fixture transport supplies already sampled references, not a new data loader.
 spec=importlib.util.spec_from_file_location('tested_adapter',root/'adapter.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
 runtime=json.loads((root/'runtime.json').read_text());runtime['weights']=str(decoder);runtime['artifacts']['encoder']['path']=str(encoder)
 assert subprocess.check_output(['git','-C',str(source),'rev-parse','HEAD'],text=True).strip()==runtime['source_commit'], 'upstream commit mismatch'
-for used in [native/'src/g1_deploy_onnx_ref.cpp',native/'src/state_logger.cpp',native/'include/state_logger.hpp',native/'include/math_utils.hpp',native/'include/policy_parameters.hpp']:
+for used in [config_path,native/'src/g1_deploy_onnx_ref.cpp',native/'src/state_logger.cpp',native/'include/state_logger.hpp',native/'include/math_utils.hpp',native/'include/policy_parameters.hpp']:
  record=subprocess.check_output(['git','-C',str(source),'ls-tree','HEAD',str(used.relative_to(source))],text=True).split()
  blob=subprocess.check_output(['git','hash-object',str(used)],text=True).strip()
  assert record[2]==blob, f'upstream file changed: {used.name}'
 policy=mod.SONIC(root,runtime);cfg=policy.cfg
+assert cfg['encoder_dimension']==total and cfg['reference_orientation_frame']=='body'
 canonical=tuple(json.loads((root/'motion-challenge/suites/lafan/dataset.json').read_text())['joint_names'])
 order=[canonical.index(n) for n in policy.names]
 rng=np.random.default_rng(1602);worst=dict(encoder_observation=0.,history=0.,decoder_input=0.,action=0.,motor_target=0.)
@@ -146,4 +161,4 @@ with tempfile.TemporaryDirectory() as directory:
    worst[name]=max(worst[name],float(np.max(np.abs(np.asarray(a)-np.asarray(b)))))
    np.testing.assert_allclose(a,b,atol=2e-5,rtol=2e-5,err_msg=name)
  process.stdin.close();assert process.wait(timeout=5)==0,process.stderr.read()
-print(json.dumps(dict(cases=160,resets=4,source_commit=runtime['source_commit'],max_abs=worst,scope='Pinned C++ observation gatherers and StateLogger history/zero-padding, same author ONNX encoder and decoder, native float motor targets; canonical benchmark physics and CPU-vs-TensorRT numerical behavior are separate.')))
+print(json.dumps(dict(passed=True,checkpoint_sha256=runtime['weights_sha256'],encoder_sha256=runtime['artifacts']['encoder']['sha256'],observation_config_sha256=hashlib.sha256(config_path.read_bytes()).hexdigest(),cases=160,resets=4,source_commit=runtime['source_commit'],max_abs=worst,scope='Pinned C++ observation gatherers and StateLogger history/zero-padding, same author ONNX encoder and decoder, native float motor targets; canonical benchmark physics and CPU-vs-TensorRT numerical behavior are separate.')))

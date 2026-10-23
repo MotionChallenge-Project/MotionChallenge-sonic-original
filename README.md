@@ -1,12 +1,12 @@
-# SONIC v1.1
+# SONIC Original
 
-[Author project](https://github.com/NVlabs/GR00T-WholeBodyControl) · [Checkpoint](https://huggingface.co/nvidia/GEAR-SONIC/blob/6733128a3d8a523b1418b06bca3cdf61c8b0987f/sonic_v1_1/model_decoder.onnx) · [Provenance](provenance.json)
+[Author project](https://github.com/NVlabs/GR00T-WholeBodyControl) · [Checkpoint](https://huggingface.co/nvidia/GEAR-SONIC/blob/6733128a3d8a523b1418b06bca3cdf61c8b0987f/model_decoder.onnx) · [Provenance](provenance.json)
 
 ## Install and run
 
 ```bash
-git clone --recurse-submodules https://github.com/motion-challenge-project/motion-challenge-sonic-v1-1.git
-cd motion-challenge-sonic-v1-1
+git clone --recurse-submodules https://github.com/motion-challenge-project/motion-challenge-sonic-original.git
+cd motion-challenge-sonic-original
 uv sync
 uv run evaluate.py
 ```

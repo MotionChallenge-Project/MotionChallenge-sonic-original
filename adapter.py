@@ -56,7 +56,7 @@ class SONIC(ONNXController):
         # encoder_mode_4 is [mode_id,0,0,0]; mode 0 is G1, not a one-hot.
         obs[0,4:294] = q.reshape(-1)
         obs[0,294:584] = qd.reshape(-1)
-        obs[0,584:644] = rot6.reshape(-1)
+        obs[0,601:661] = rot6.reshape(-1)
         # Other modality fields stay zero, as in GatherEncoderObservations.
         return obs
 

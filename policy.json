@@ -154,7 +154,8 @@
     "left_wrist_yaw_joint",
     "right_wrist_yaw_joint"
   ],
-  "encoder_dimension": 1751,
-  "reference_orientation_frame": "heading",
-  "native_notes": "Pinned author G1 mode 0; term-major oldest-first ten-frame history; native StateLogger zero padding; unclipped action and float motor targets."
+  "encoder_dimension": 1762,
+  "reference_orientation_frame": "body",
+  "native_notes": "Original release G1 mode 0; 10 references at step 5, full-body orientation frame, original 1762D encoder layout, native cold history padding.",
+  "native_observation_config": "gear_sonic_deploy/policy/release/observation_config.yaml"
 }
