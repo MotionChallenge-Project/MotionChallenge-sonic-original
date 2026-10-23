@@ -16,5 +16,16 @@
     "G1 encoder mode 0; unused teleop/SMPL fields remain zero.",
     "Canonical benchmark physics is separate from author training physics."
   ],
-  "parity_scope": "Author observation gatherers and history padding are compiled from pinned upstream C++; both inference paths use CPU ONNX Runtime with original encoder and decoder. This does not establish TensorRT numerical equivalence or match author training physics."
+  "parity_scope": "Author observation gatherers and history padding are compiled from pinned upstream C++; both inference paths use CPU ONNX Runtime with original encoder and decoder. This does not establish TensorRT numerical equivalence or match author training physics.",
+  "checkpoint_origin": {
+    "author_release_url": "https://github.com/NVlabs/GR00T-WholeBodyControl/blob/45c03facbf848e0c743091b7d9c17952096ff908/README.md",
+    "author_release_label": "NVlabs/GR00T-WholeBodyControl",
+    "kind": "author_file",
+    "kind_label": "Author-released checkpoint",
+    "artifact_page_url": "https://huggingface.co/nvidia/GEAR-SONIC/blob/6733128a3d8a523b1418b06bca3cdf61c8b0987f/sonic_v1_1/model_decoder.onnx",
+    "original_filename": "model_decoder.onnx",
+    "verification": "The adapter pins this published artifact by SHA256. Artifact identity is separate from inference parity.",
+    "download_url": "https://huggingface.co/nvidia/GEAR-SONIC/resolve/6733128a3d8a523b1418b06bca3cdf61c8b0987f/sonic_v1_1/model_decoder.onnx",
+    "sha256": "34bae8570d4a4421a5391a5c2befd745d4a02d182ec539e5f9da44c091c67509"
+  }
 }
