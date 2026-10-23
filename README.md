@@ -1,35 +1,23 @@
 # SONIC v1.1
 
-Independent Motion Challenge adapter for [SONIC v1.1](https://github.com/NVlabs/GR00T-WholeBodyControl).
+[Author project](https://github.com/NVlabs/GR00T-WholeBodyControl) · [Checkpoint](https://huggingface.co/nvidia/GEAR-SONIC/blob/6733128a3d8a523b1418b06bca3cdf61c8b0987f/sonic_v1_1/model_decoder.onnx) · [Provenance](provenance.json)
 
-```sh
+## Install and run
+
+```bash
 git clone --recurse-submodules https://github.com/motion-challenge-project/motion-challenge-sonic-v1-1.git
 cd motion-challenge-sonic-v1-1
 uv sync
 uv run evaluate.py
 ```
 
-The root `motion-challenge` submodule owns datasets, physics, failure rules and scoring.
-Local weights are reused; downloads are hash-checked. Results are stored outside Git.
-Use `--weights PATH --data PATH --offline` for cached artifacts.
+One full rollout per motion produces success, completion and all six MPBPE values
+in one verified `result.json`. MuJoCo 3.17 CPU batch; `--jobs 8` sets rollout and
+verification parallelism. Progress updates every five seconds.
 
-[Provenance](provenance.json)
+Missing data and weights are downloaded and hash-checked. Cached files can be
+selected with `--weights PATH --data PATH --offline`. Results and traces stay
+outside Git.
 
-Use `--weights DECODER --artifact encoder=ENCODER --offline` for local components.
-Use `--termination none` for complete trajectories after a tracking failure.
-
-Validate author inference (C++17 required):
-```sh
-uv run validate_inference.py . UPSTREAM DECODER ENCODER
-```
-Use the upstream commit recorded in `provenance.json`.
-
-## Checkpoint source
-
-[NVlabs/GR00T-WholeBodyControl](https://github.com/NVlabs/GR00T-WholeBodyControl/blob/45c03facbf848e0c743091b7d9c17952096ff908/README.md) · [model_decoder.onnx](https://huggingface.co/nvidia/GEAR-SONIC/blob/6733128a3d8a523b1418b06bca3cdf61c8b0987f/sonic_v1_1/model_decoder.onnx). Author-released checkpoint.
-
-The adapter pins this published artifact by SHA256. Artifact identity is separate from inference parity.
-
-One `uv run evaluate.py` rolls out each complete motion once, then verifies the trace.
-The same trajectory provides success, completion and all six MPBPE values in one
-`result.json`, with one source revision. No branch switching is needed.
+This repository adapts model inference. The pinned root `motion-challenge`
+submodule owns datasets, physics, metrics and verification. See `--help` for options.
