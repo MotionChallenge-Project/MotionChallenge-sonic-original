@@ -1,0 +1,50 @@
+{
+  "schema": "MotionChallenge/observation-admission-v1",
+  "model": "sonic-original",
+  "display_name": "SONIC Original",
+  "state_access": "ideal-proprioceptive-no-position-v1",
+  "status": "inference_verified",
+  "checkpoint_sha256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed",
+  "auxiliary_artifacts": {
+    "encoder": "013ab0287236aa2721e13f1e936d699db982302d0de0bfcdae76d5c3245362d3"
+  },
+  "checkpoint_origin": {
+    "author_release_url": "https://github.com/NVlabs/GR00T-WholeBodyControl/blob/45c03facbf848e0c743091b7d9c17952096ff908/README.md",
+    "author_release_label": "NVlabs/GR00T-WholeBodyControl",
+    "kind": "author_file",
+    "kind_label": "Author-released checkpoint",
+    "artifact_page_url": "https://huggingface.co/nvidia/GEAR-SONIC/blob/6733128a3d8a523b1418b06bca3cdf61c8b0987f/model_decoder.onnx",
+    "original_filename": "model_decoder.onnx",
+    "verification": "The adapter pins this published artifact by SHA256. Artifact identity is separate from inference parity.",
+    "download_url": "https://huggingface.co/nvidia/GEAR-SONIC/resolve/6733128a3d8a523b1418b06bca3cdf61c8b0987f/model_decoder.onnx",
+    "sha256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed"
+  },
+  "author_source": "https://github.com/NVlabs/GR00T-WholeBodyControl",
+  "author_commit": "45c03facbf848e0c743091b7d9c17952096ff908",
+  "base_adapter_commit": "a6ecaa8c319aeca0d74b49c4dffc56ce777b1c7f",
+  "production_source_sha256": {
+    "adapter.py": "918edae17c7fbbd18628690678349a32dc3066f2a60876dc7ba9624e13a497eb",
+    "evaluate.py": "0ebb8c761f00dd963f2e45c85ecb94628273911bb1edfc0f2621e8fc458cb4ff",
+    "native-sources.json": "6dc78525adb343a141e5e38d313e738d5435698560c4b916fd33e9b2a4fead6e",
+    "policy.json": "6b13aa8010efb1ec1e888f4e332bc2e1b13b5fe5742fac52074e9142bb3706aa",
+    "validate_inference.py": "3aa82f58b2074f709e5a41e5469dc135ef919293505929b4b7d3f77f368492f3"
+  },
+  "prior_native_parity_sha256": {
+    "validation/native-parity.json": "b67d80daddc45ca6344d2032befdcc1c9b9793f47d9b78c2d0a962f79c063a06"
+  },
+  "handling": "Released actor uses joint state, angular velocity/gravity or orientation and reference features. Retain author normalization, history/recurrent state, action processing and declared lookahead; validate numerical independence from actual translation.",
+  "actual_position_integration": "No explicit integration or odometry in the inspected deployed adapter source; blocked paths are listed separately.",
+  "special_handling": "FK of allowed state at fixed synthetic origin (0,0,0); never actual measured origin.",
+  "new_evaluation": {
+    "status": "queued",
+    "inherited_scores": false
+  },
+  "repository": "https://github.com/MotionChallenge-Project/MotionChallenge-sonic-original",
+  "dependency_test": {
+    "path": "validation/observation-access.json",
+    "sha256": "d16d1a765d8b58ee5fc48caaca274e0800d81822fb9051c76098c25f07cd4008",
+    "code": "validate_observations.py",
+    "cases": 160,
+    "resets": 4
+  }
+}
