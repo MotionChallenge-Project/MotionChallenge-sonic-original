@@ -1,6 +1,6 @@
 {
   "id": "sonic-original-g1-v1",
-  "entrypoint": "adapter:create",
+  "entrypoint": "restricted:create",
   "control_period_s": 0.02,
   "reference_offsets_s": [
     0.0,
@@ -16,7 +16,7 @@
   ],
   "reference_history_s": 0,
   "reference_preview_s": 0.9,
-  "state_access": "privileged-state-v0",
+  "state_access": "ideal-proprioceptive-no-position-v1",
   "action_mode": "joint-pd-feedforward",
   "weights": "checkpoints/policy.onnx",
   "weights_url": "https://huggingface.co/nvidia/GEAR-SONIC/resolve/6733128a3d8a523b1418b06bca3cdf61c8b0987f/model_decoder.onnx",
@@ -33,12 +33,8 @@
       "url": "https://huggingface.co/nvidia/GEAR-SONIC/resolve/6733128a3d8a523b1418b06bca3cdf61c8b0987f/model_encoder.onnx"
     }
   },
-  "default_track": "ideal-proprioception",
-  "observation_tracks": {
-    "ideal-proprioception": {
-      "entrypoint": "restricted:create",
-      "admission_record": "admission.json",
-      "admission_sha256": "a8a43ea75fc252388be7ec7b1027e2322eea5225e4562823a380771b13fd4133"
-    }
+  "observation_contract": {
+    "admission_record": "admission.json",
+    "admission_sha256": "a8a43ea75fc252388be7ec7b1027e2322eea5225e4562823a380771b13fd4133"
   }
 }
