@@ -23,11 +23,13 @@
   "author_commit": "45c03facbf848e0c743091b7d9c17952096ff908",
   "base_adapter_commit": "a6ecaa8c319aeca0d74b49c4dffc56ce777b1c7f",
   "production_source_sha256": {
-    "adapter.py": "918edae17c7fbbd18628690678349a32dc3066f2a60876dc7ba9624e13a497eb",
+    "adapter.py": "515c721bfbbf06bc1ef81972b673b11897eb031d4138ab591d9c6677843a1c5b",
     "evaluate.py": "0ebb8c761f00dd963f2e45c85ecb94628273911bb1edfc0f2621e8fc458cb4ff",
     "native-sources.json": "6dc78525adb343a141e5e38d313e738d5435698560c4b916fd33e9b2a4fead6e",
     "policy.json": "6b13aa8010efb1ec1e888f4e332bc2e1b13b5fe5742fac52074e9142bb3706aa",
-    "validate_inference.py": "3aa82f58b2074f709e5a41e5469dc135ef919293505929b4b7d3f77f368492f3"
+    "validate_inference.py": "3aa82f58b2074f709e5a41e5469dc135ef919293505929b4b7d3f77f368492f3",
+    "restricted.py": "8f8fdcc4dc41813cf5d8f8c55e4b219310145f74a540457b52c41843a49bd831",
+    "parallel.py": "24f5d3b68572d209c8570f8e346ad63b158aac17a86950aebf49c397d2d234fc"
   },
   "prior_native_parity_sha256": {
     "validation/native-parity.json": "b67d80daddc45ca6344d2032befdcc1c9b9793f47d9b78c2d0a962f79c063a06"
@@ -42,5 +44,10 @@
     "code": "validate_observations.py",
     "cases": 160,
     "resets": 4
+  },
+  "execution_validation": {
+    "path": "validation/concurrency.json",
+    "sha256": "e091411a6be613bb1ae69c4d165fd41d64cf1fe2cf0bdd7ef5870f187e87ea3b",
+    "scope": "Native outputs, independent histories/RNG, reordered slots/partial resets and all40 two-second closed-loop exact comparison; does not replace full benchmark evidence."
   }
 }
