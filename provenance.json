@@ -6,27 +6,28 @@
   "upstream": "https://github.com/NVlabs/GR00T-WholeBodyControl",
   "source_commit": "45c03facbf848e0c743091b7d9c17952096ff908",
   "checkpoint_sha256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed",
-  "author_inference_review": "Numerical comparison against pinned author inference: validation/native-parity.json",
+  "author_inference_review": "Original ONNX CPU/GPU tensor parity and deployment observation/history/reset checks are recorded in validation/.",
   "notes": "G1 encoder mode 0 with the author release observation configuration, history order, PD gains and unclipped actions.",
-  "benchmark_physics": "Shared canonical G1 nominal physics and initialization.",
+  "benchmark_physics": "MJWarp 3.11; 20 ms control/scoring, four 5 ms physics steps, sliding friction 1.0, Newton maximum 50 iterations.",
   "encoder_sha256": "013ab0287236aa2721e13f1e936d699db982302d0de0bfcdae76d5c3245362d3",
   "inference_adaptations": [
-    "CPU ONNX Runtime executes the author encoder and decoder; no weight conversion.",
-    "Native cold StateLogger zero padding; no pre-roll simulation.",
-    "G1 encoder mode 0; unused teleop/SMPL fields remain zero.",
-    "Canonical benchmark physics is separate from author training physics."
+    "Extract author-published G1 encoder and decoder tensors into safetensors for full-batch GPU inference.",
+    "Use author cold history padding, reference observations and PD targets.",
+    "Select G1 encoder mode 0; retain the author inactive-modality masking."
   ],
-  "parity_scope": "Author observation gatherers and history padding are compiled from pinned upstream C++; both inference paths use CPU ONNX Runtime with original encoder and decoder. This does not establish TensorRT numerical equivalence or match author training physics.",
+  "parity_scope": "Original ONNX versus GPU tensor inference, plus pinned author observation/history/reset behavior. TensorRT and author training physics are separate execution systems.",
   "checkpoint_origin": {
-    "author_release_url": "https://github.com/NVlabs/GR00T-WholeBodyControl/blob/45c03facbf848e0c743091b7d9c17952096ff908/README.md",
+    "author_release_url": "https://raw.githubusercontent.com/NVlabs/GR00T-WholeBodyControl/45c03facbf848e0c743091b7d9c17952096ff908/README.md",
     "author_release_label": "NVlabs/GR00T-WholeBodyControl",
     "kind": "author_file",
-    "kind_label": "Author-released checkpoint",
+    "kind_label": "Author-published original ONNX",
     "artifact_page_url": "https://huggingface.co/nvidia/GEAR-SONIC/blob/6733128a3d8a523b1418b06bca3cdf61c8b0987f/model_decoder.onnx",
     "original_filename": "model_decoder.onnx",
-    "verification": "The adapter pins this published artifact by SHA256. Artifact identity is separate from inference parity.",
+    "verification": "Complete original files match fixed publisher LFS SHA-256 or Git blob identities; validation/checkpoint-origin.json records every component.",
     "download_url": "https://huggingface.co/nvidia/GEAR-SONIC/resolve/6733128a3d8a523b1418b06bca3cdf61c8b0987f/model_decoder.onnx",
-    "sha256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed"
+    "sha256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed",
+    "evidence": "validation/checkpoint-origin.json"
   },
-  "inference_validation": "validation/native-parity.json"
+  "inference_validation": "validation/inference-network-proof.json",
+  "official_author_weights": true
 }

@@ -1,0 +1,55 @@
+{
+  "state_access": "proprioceptive-no-position-no-linear-velocity-v1",
+  "checkpoint_sha256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed",
+  "status": "inference_verified",
+  "observation_sources": [
+    "joint_position",
+    "joint_velocity",
+    "root_orientation",
+    "root_angular_velocity",
+    "previous_actions",
+    "root_joint_motion_reference"
+  ],
+  "actual_global_position": false,
+  "actual_linear_velocity": false,
+  "reference_features": "Adapter-owned root/joint features and FK",
+  "evidence": [
+    {
+      "path": "tensor_adapter.py",
+      "sha256": "677ce65b6fba3b87888daed92738710875a09f41e832fd261cad8637ffda033a"
+    },
+    {
+      "path": "convert_weights.py",
+      "sha256": "b1c07f350033fc6a377e8ff244236a997cb1a0add2190ed32a26e4c8fce6f701"
+    },
+    {
+      "path": "validate_tensor.py",
+      "sha256": "bee0be62807f868da107c32a37cba689a1530ff5b9275d6cc25f13b1d1da7cc0"
+    },
+    {
+      "path": "validate_full_batch.py",
+      "sha256": "a477120f3cf934fbdcc165a10fecd2ebf16fe0943a84a946d8b0f6dd4bd7b86a"
+    },
+    {
+      "path": "sonic_torch.py",
+      "sha256": "2bfa2aeb673aa7fb48a72f1b571f34bb61549386366caa655b8385b9cf18c3bb"
+    },
+    {
+      "path": "validation/inference-network-proof.json",
+      "sha256": "008980241fb0eb783f5ae8428cdd637801670403273deded9f1f479a41a30b15"
+    },
+    {
+      "path": "validation/tensor-observation-parity.json",
+      "sha256": "92b12d2f6be72b7fdc1058e68ffbdfe04d79b614a5be41fe6470dbcb913ffa2f"
+    },
+    {
+      "path": "validation/full-batch-4096.json",
+      "sha256": "a1ac540e12ee117c7917ec5b6fa331ecc42f958f118e5c2730439fc5e9ac2334"
+    },
+    {
+      "path": "validation/conversion-cache-check.json",
+      "sha256": "7e3194cc866fb576abdb296e38669f9ca96ecdde4df472c9661c74ce5bbe3b99"
+    }
+  ],
+  "rollout_validation": "Separate dataset-specific full rollout, independent trace verification and clean reproduction reports"
+}

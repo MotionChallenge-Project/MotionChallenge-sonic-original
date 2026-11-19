@@ -1,0 +1,44 @@
+{
+  "status": "author_release_verified",
+  "model": "sonic-original",
+  "sha256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed",
+  "author_release_url": "https://raw.githubusercontent.com/NVlabs/GR00T-WholeBodyControl/45c03facbf848e0c743091b7d9c17952096ff908/README.md",
+  "artifact_url": "https://huggingface.co/nvidia/GEAR-SONIC/resolve/6733128a3d8a523b1418b06bca3cdf61c8b0987f/model_decoder.onnx",
+  "verification_scope": "Author repository identifies the published model location; fixed-revision publisher file metadata matches the complete local original file digest. Batch tensors are extracted locally and checked against original ONNX inference.",
+  "runtime_weights_are_original_author_artifact": true,
+  "official_author_weights": true,
+  "author_release_document_sha256": "06ebe5390939368b7dca40511474e3916a7d3bc901586e0ee14027beb16a18ab",
+  "original_files": [
+    {
+      "component": "policy",
+      "artifact_url": "https://huggingface.co/nvidia/GEAR-SONIC/resolve/6733128a3d8a523b1418b06bca3cdf61c8b0987f/model_decoder.onnx",
+      "artifact_path": "model_decoder.onnx",
+      "sha256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed",
+      "bytes": 40900688,
+      "local_complete_file_sha256_verified": true,
+      "huggingface_lfs_sha256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed",
+      "metadata_url": "https://huggingface.co/api/models/nvidia/GEAR-SONIC/tree/6733128a3d8a523b1418b06bca3cdf61c8b0987f?expand=true&limit=100",
+      "git_blob_sha1": "ea080152fe952d184c0ab62753fe6c73ef14b346"
+    },
+    {
+      "component": "encoder",
+      "artifact_url": "https://huggingface.co/nvidia/GEAR-SONIC/resolve/6733128a3d8a523b1418b06bca3cdf61c8b0987f/model_encoder.onnx",
+      "artifact_path": "model_encoder.onnx",
+      "sha256": "013ab0287236aa2721e13f1e936d699db982302d0de0bfcdae76d5c3245362d3",
+      "bytes": 50100513,
+      "local_complete_file_sha256_verified": true,
+      "huggingface_lfs_sha256": "013ab0287236aa2721e13f1e936d699db982302d0de0bfcdae76d5c3245362d3",
+      "metadata_url": "https://huggingface.co/api/models/nvidia/GEAR-SONIC/tree/6733128a3d8a523b1418b06bca3cdf61c8b0987f?expand=true&limit=100",
+      "git_blob_sha1": "d022f1d08d11ae48d3423bf44125e2ffaa6610b4"
+    }
+  ],
+  "conversion_chain": {
+    "original_format": "author-published ONNX",
+    "original_sha256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed",
+    "hook": "convert_weights:prepare",
+    "local_batch_format": "safetensors with model-local tensor implementation",
+    "numerical_evidence": "validation/inference-network-proof.json"
+  },
+  "author_variant_manifest_url": "https://huggingface.co/nvidia/GEAR-SONIC/raw/6733128a3d8a523b1418b06bca3cdf61c8b0987f/config.json",
+  "author_variant_manifest_sha256": "326dcc509ad93509cf262871256a74f508f43a8430f61ec6abe8034e985ce948"
+}

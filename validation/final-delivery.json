@@ -1,0 +1,16 @@
+{
+  "model": "sonic-original",
+  "status": "passed",
+  "errors": [],
+  "core_commit": "2221fab60a90adc3c85b1dfd438e00244fb58263",
+  "runtime_sha256": "3241c04f9715720349cb74ce88f317bdf2b420333c87bbebecefe4b8526bb3ef",
+  "locked_environment_and_cli": true,
+  "own_core_import": "/mnt/volumes/nexus-train-bd-ga/swd/motionchallenge-mjwarp/MotionChallenge-sonic-original/MotionChallenge-Core/src/motion_challenge/__init__.py",
+  "admission_and_source_hashes": true,
+  "modules": [
+    "convert_weights",
+    "evaluate",
+    "sonic_torch",
+    "tensor_adapter"
+  ]
+}

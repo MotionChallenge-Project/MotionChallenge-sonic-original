@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "model": "sonic-original",
+  "runtime_sha256": "3241c04f9715720349cb74ce88f317bdf2b420333c87bbebecefe4b8526bb3ef",
+  "admission_sha256": "4ca947195c36d12185fa8ae7215e3581acc557efe859a48d599e287d696077a5",
+  "production_modules": [
+    "convert_weights",
+    "evaluate",
+    "sonic_torch",
+    "tensor_adapter"
+  ],
+  "inference_evidence_hashes_verified": true,
+  "no_actual_global_position_or_linear_velocity": true,
+  "model_local_converter_and_tensor_adapter": true,
+  "no_private_server_paths_or_seed_mjlab_imports_in_production_modules": true,
+  "initialized_core_submodule": true,
+  "independent_locked_environment_and_cli_verified": true,
+  "current_dataset_commands_documented": true,
+  "scope": "Independent source, dependency and documentation delivery; dataset outcomes are reported separately."
+}

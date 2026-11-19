@@ -1,0 +1,1666 @@
+{
+  "status": "passed",
+  "scope": "SONIC shared combined ONNX versus author-released G1 mode-0 encoder and decoder; raw learned initializer arrays, all converted buffers, and original-ONNX matched-input outputs.",
+  "shared_export_is_author_published_file": false,
+  "canonical_official_model": "sonic-original",
+  "raw_original_onnx_sources": {
+    "sonic": {
+      "encoder_source_sha256": "3e1914f136a0a85e91d42fa0531ffbfdd2f5999f7019a01bfdb9ff8788992070",
+      "decoder_source_sha256": "3e1914f136a0a85e91d42fa0531ffbfdd2f5999f7019a01bfdb9ff8788992070",
+      "encoder_layers": 5,
+      "decoder_layers": 7,
+      "learned_tensors": {
+        "encoder_0_weight": {
+          "source_initializer": "module.encoders.g1.module.0.weight",
+          "shape": [
+            2048,
+            640
+          ],
+          "dtype": "float32",
+          "sha256": "de5edf698e343b482c227dce00b34bb93497851949a52cd89643b7aede4f516b"
+        },
+        "encoder_0_bias": {
+          "source_initializer": "module.encoders.g1.module.0.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "78ec5e2d79690eeb65d394a4ba82f07c3b1ee9efbb82b7cec43e4cc79f164435"
+        },
+        "encoder_1_weight": {
+          "source_initializer": "module.encoders.g1.module.2.weight",
+          "shape": [
+            1024,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "473f112d3ff78634f3f6a9d7c3bbcccd6e4faa0f3d7c39be9364fc85222a140e"
+        },
+        "encoder_1_bias": {
+          "source_initializer": "module.encoders.g1.module.2.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "cb82c64d83b4535c6e9b95297e8fa1aa4b884869cc5581e2846a67a2c5bbc8dc"
+        },
+        "encoder_2_weight": {
+          "source_initializer": "module.encoders.g1.module.4.weight",
+          "shape": [
+            512,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "97b2ffd2807eccc741328dc7ddabac7b5048df8fa1ba22e13c5825c4b750f525"
+        },
+        "encoder_2_bias": {
+          "source_initializer": "module.encoders.g1.module.4.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "dd0e7fa00b5a95051f3b9182cf9494e224546db1c0b08c150cdf4ab4bc7fbe17"
+        },
+        "encoder_3_weight": {
+          "source_initializer": "module.encoders.g1.module.6.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "833abd7259f264edf6660e1214c382d1940b27f7f7bb28ac2a82668ca1c0472d"
+        },
+        "encoder_3_bias": {
+          "source_initializer": "module.encoders.g1.module.6.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "7ebb9908af5bf112b8d500f19276849432908e74dfa2f275db31ad5e7b09a427"
+        },
+        "encoder_4_weight": {
+          "source_initializer": "module.encoders.g1.module.8.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "fd8a06de0c6ba759457ffc6c194d1d35a7c21cef6ef2b696eda41d3a8e0e5779"
+        },
+        "encoder_4_bias": {
+          "source_initializer": "module.encoders.g1.module.8.bias",
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "sha256": "2ae0974baadb9e9d33961fa7c986075f73c6e4cdd9a81523bf4b7ff4021a9265"
+        },
+        "decoder_0_weight": {
+          "source_initializer": "onnx::MatMul_289",
+          "shape": [
+            994,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "35d031b7530a46bbb6978e7206f637f6683d81495c1fbd1323407725a4382586"
+        },
+        "decoder_0_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.0.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "f2bff86441ae0a6e3ac9ed587fce87040f44165a764052b02e31cae1a5ae36b7"
+        },
+        "decoder_1_weight": {
+          "source_initializer": "onnx::MatMul_290",
+          "shape": [
+            2048,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "bd59c03792ae2d3cfb20edbd6413fb919dbd43f4f2040d1b236e6cea571e5691"
+        },
+        "decoder_1_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.2.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "b0b18d12b23ea94acd8a6b706780313d3d41951fc4134083dac83530d2322717"
+        },
+        "decoder_2_weight": {
+          "source_initializer": "onnx::MatMul_291",
+          "shape": [
+            2048,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "56e7a60e289ed9481bda900627322219f0126c7fa3a907745b687160ef0b69fe"
+        },
+        "decoder_2_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.4.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "fc88ae71c5b2f8832835f7c20378ba384b164b8ec940846274fb7386083c256b"
+        },
+        "decoder_3_weight": {
+          "source_initializer": "onnx::MatMul_292",
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "92b55678c33597aceb33dd5b0d60fdc3127e165dac3542640d6fb693ed379a01"
+        },
+        "decoder_3_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.6.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "ed833effd5e6dbf72ac4c4b1a4c571646a20dbd6fe28ff03f7522d1f9c3e36f4"
+        },
+        "decoder_4_weight": {
+          "source_initializer": "onnx::MatMul_293",
+          "shape": [
+            1024,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "02a50503e1f8d9927758c206ba6b9d8509dfca642862a4b021b46fe7f6af34bb"
+        },
+        "decoder_4_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.8.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "19bdd12bb096f7e91cdbc9d328af41ebbba5aa6eea14e793095dacba1db9e4db"
+        },
+        "decoder_5_weight": {
+          "source_initializer": "onnx::MatMul_294",
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "541dbcdc1fe6c70f00e4e12dc8d24125985e8ea9da7df84aa6c83b8391bf2cd2"
+        },
+        "decoder_5_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.10.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "d0fcb5101f501b0acbb83f4382a5a0f9da4378074ca3549f37887c8240273a2c"
+        },
+        "decoder_6_weight": {
+          "source_initializer": "onnx::MatMul_295",
+          "shape": [
+            512,
+            29
+          ],
+          "dtype": "float32",
+          "sha256": "c6530a0f8b60c535bc985cda308f35d324a63fe5b226059db856473d61a6c572"
+        },
+        "decoder_6_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.12.bias",
+          "shape": [
+            29
+          ],
+          "dtype": "float32",
+          "sha256": "eb3a5c2739d56019dc0063543f6a31b6fc983504f9d4ef0d2ec1ca384fcbec57"
+        }
+      }
+    },
+    "sonic-original": {
+      "encoder_source_sha256": "013ab0287236aa2721e13f1e936d699db982302d0de0bfcdae76d5c3245362d3",
+      "decoder_source_sha256": "c7241a123eaa36b5d64bad19540efde93cac1ad443bd4572fd12ca99898118ed",
+      "encoder_layers": 5,
+      "decoder_layers": 7,
+      "learned_tensors": {
+        "encoder_0_weight": {
+          "source_initializer": "module.encoders.g1.module.0.weight",
+          "shape": [
+            2048,
+            640
+          ],
+          "dtype": "float32",
+          "sha256": "de5edf698e343b482c227dce00b34bb93497851949a52cd89643b7aede4f516b"
+        },
+        "encoder_0_bias": {
+          "source_initializer": "module.encoders.g1.module.0.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "78ec5e2d79690eeb65d394a4ba82f07c3b1ee9efbb82b7cec43e4cc79f164435"
+        },
+        "encoder_1_weight": {
+          "source_initializer": "module.encoders.g1.module.2.weight",
+          "shape": [
+            1024,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "473f112d3ff78634f3f6a9d7c3bbcccd6e4faa0f3d7c39be9364fc85222a140e"
+        },
+        "encoder_1_bias": {
+          "source_initializer": "module.encoders.g1.module.2.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "cb82c64d83b4535c6e9b95297e8fa1aa4b884869cc5581e2846a67a2c5bbc8dc"
+        },
+        "encoder_2_weight": {
+          "source_initializer": "module.encoders.g1.module.4.weight",
+          "shape": [
+            512,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "97b2ffd2807eccc741328dc7ddabac7b5048df8fa1ba22e13c5825c4b750f525"
+        },
+        "encoder_2_bias": {
+          "source_initializer": "module.encoders.g1.module.4.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "dd0e7fa00b5a95051f3b9182cf9494e224546db1c0b08c150cdf4ab4bc7fbe17"
+        },
+        "encoder_3_weight": {
+          "source_initializer": "module.encoders.g1.module.6.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "833abd7259f264edf6660e1214c382d1940b27f7f7bb28ac2a82668ca1c0472d"
+        },
+        "encoder_3_bias": {
+          "source_initializer": "module.encoders.g1.module.6.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "7ebb9908af5bf112b8d500f19276849432908e74dfa2f275db31ad5e7b09a427"
+        },
+        "encoder_4_weight": {
+          "source_initializer": "module.encoders.g1.module.8.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "fd8a06de0c6ba759457ffc6c194d1d35a7c21cef6ef2b696eda41d3a8e0e5779"
+        },
+        "encoder_4_bias": {
+          "source_initializer": "module.encoders.g1.module.8.bias",
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "sha256": "2ae0974baadb9e9d33961fa7c986075f73c6e4cdd9a81523bf4b7ff4021a9265"
+        },
+        "decoder_0_weight": {
+          "source_initializer": "onnx::MatMul_136",
+          "shape": [
+            994,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "35d031b7530a46bbb6978e7206f637f6683d81495c1fbd1323407725a4382586"
+        },
+        "decoder_0_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.0.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "f2bff86441ae0a6e3ac9ed587fce87040f44165a764052b02e31cae1a5ae36b7"
+        },
+        "decoder_1_weight": {
+          "source_initializer": "onnx::MatMul_137",
+          "shape": [
+            2048,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "bd59c03792ae2d3cfb20edbd6413fb919dbd43f4f2040d1b236e6cea571e5691"
+        },
+        "decoder_1_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.2.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "b0b18d12b23ea94acd8a6b706780313d3d41951fc4134083dac83530d2322717"
+        },
+        "decoder_2_weight": {
+          "source_initializer": "onnx::MatMul_138",
+          "shape": [
+            2048,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "56e7a60e289ed9481bda900627322219f0126c7fa3a907745b687160ef0b69fe"
+        },
+        "decoder_2_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.4.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "fc88ae71c5b2f8832835f7c20378ba384b164b8ec940846274fb7386083c256b"
+        },
+        "decoder_3_weight": {
+          "source_initializer": "onnx::MatMul_139",
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "92b55678c33597aceb33dd5b0d60fdc3127e165dac3542640d6fb693ed379a01"
+        },
+        "decoder_3_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.6.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "ed833effd5e6dbf72ac4c4b1a4c571646a20dbd6fe28ff03f7522d1f9c3e36f4"
+        },
+        "decoder_4_weight": {
+          "source_initializer": "onnx::MatMul_140",
+          "shape": [
+            1024,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "02a50503e1f8d9927758c206ba6b9d8509dfca642862a4b021b46fe7f6af34bb"
+        },
+        "decoder_4_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.8.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "19bdd12bb096f7e91cdbc9d328af41ebbba5aa6eea14e793095dacba1db9e4db"
+        },
+        "decoder_5_weight": {
+          "source_initializer": "onnx::MatMul_141",
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "541dbcdc1fe6c70f00e4e12dc8d24125985e8ea9da7df84aa6c83b8391bf2cd2"
+        },
+        "decoder_5_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.10.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "d0fcb5101f501b0acbb83f4382a5a0f9da4378074ca3549f37887c8240273a2c"
+        },
+        "decoder_6_weight": {
+          "source_initializer": "onnx::MatMul_142",
+          "shape": [
+            512,
+            29
+          ],
+          "dtype": "float32",
+          "sha256": "c6530a0f8b60c535bc985cda308f35d324a63fe5b226059db856473d61a6c572"
+        },
+        "decoder_6_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.12.bias",
+          "shape": [
+            29
+          ],
+          "dtype": "float32",
+          "sha256": "eb3a5c2739d56019dc0063543f6a31b6fc983504f9d4ef0d2ec1ca384fcbec57"
+        }
+      }
+    },
+    "sonic-low-latency": {
+      "encoder_source_sha256": "60be43157f57d812f38bdbb740a5de5d5d070e8840d9edc16f02a91a6d06255b",
+      "decoder_source_sha256": "c4ac2e74045e7cbfb568f15e6bf47ea7ce023df7a94322af50be223e0a628bab",
+      "encoder_layers": 5,
+      "decoder_layers": 9,
+      "learned_tensors": {
+        "encoder_0_weight": {
+          "source_initializer": "module.encoders.g1.module.0.weight",
+          "shape": [
+            2048,
+            640
+          ],
+          "dtype": "float32",
+          "sha256": "2f8b89920c241880b6b5b4f54ae44fd45071931196fcf3d051c1217a5a041a90"
+        },
+        "encoder_0_bias": {
+          "source_initializer": "module.encoders.g1.module.0.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "d0e94fa897449f40f1f5380512eb6c8d298d0fb7e6cdc96544ef149609f476b0"
+        },
+        "encoder_1_weight": {
+          "source_initializer": "module.encoders.g1.module.2.weight",
+          "shape": [
+            1024,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "efb7a07c17574445c562372f58a0da4f33513e00de6eef616b1a1cb44aaaed3a"
+        },
+        "encoder_1_bias": {
+          "source_initializer": "module.encoders.g1.module.2.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "6706c73e1c47cb4f21a46694c7ba0fcd94a52de5b1b1ef8b3a1d8d1e4ae41b49"
+        },
+        "encoder_2_weight": {
+          "source_initializer": "module.encoders.g1.module.4.weight",
+          "shape": [
+            512,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "95d7adc66ee038c45ad050de8dd7e467a458ee1cc255df0cfcf928b6fa42e76e"
+        },
+        "encoder_2_bias": {
+          "source_initializer": "module.encoders.g1.module.4.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "a34282a393ea2a4afe09eb374953c04b7114b450172192220f6b07fd93dfd01f"
+        },
+        "encoder_3_weight": {
+          "source_initializer": "module.encoders.g1.module.6.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "2fd9f04f338db7443cdf38c48a2509b3b7a0d29c0dcd352c2af0a23eef03a7fe"
+        },
+        "encoder_3_bias": {
+          "source_initializer": "module.encoders.g1.module.6.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "02b6d7280dfc76fb7185eac0ce99c11392749175d865118e7c7f9691a1b1731b"
+        },
+        "encoder_4_weight": {
+          "source_initializer": "module.encoders.g1.module.8.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "f95c5dc4803c9e662b57a6a21f9e9f51f56d7c7986a318143a6cfb408adbeb09"
+        },
+        "encoder_4_bias": {
+          "source_initializer": "module.encoders.g1.module.8.bias",
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "sha256": "90d85781253653cf7ab0389ae9aac1b82dfbf2472df074e17bb067125235b23a"
+        },
+        "decoder_0_weight": {
+          "source_initializer": "onnx::MatMul_151",
+          "shape": [
+            994,
+            4096
+          ],
+          "dtype": "float32",
+          "sha256": "46a0b520b5cd7926ad09a9335aba0d2a10558d442913ca107c471ab90647782d"
+        },
+        "decoder_0_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.0.bias",
+          "shape": [
+            4096
+          ],
+          "dtype": "float32",
+          "sha256": "84570c933908a1e2523c35dcdebe1afaa0f617c96583203e0575c45563daf3ca"
+        },
+        "decoder_1_weight": {
+          "source_initializer": "onnx::MatMul_152",
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "float32",
+          "sha256": "f1577f037e9a7118d90b7f55c01a48407bff696d009261936c5ea7b3d273bf06"
+        },
+        "decoder_1_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.2.bias",
+          "shape": [
+            4096
+          ],
+          "dtype": "float32",
+          "sha256": "65603b7b4868fa24424ffe20a07406b5cc8d5dd7ca58a386bef29ef2a957994e"
+        },
+        "decoder_2_weight": {
+          "source_initializer": "onnx::MatMul_153",
+          "shape": [
+            4096,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "678168c96c872e966f2bf1a9dd9ff4cc0213118bd464ebc0139e55ccc3efb508"
+        },
+        "decoder_2_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.4.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "4e0d9d2227fe0dde90697d944559f9f0cd2318beccfb557637397ab3a8ea4d4c"
+        },
+        "decoder_3_weight": {
+          "source_initializer": "onnx::MatMul_154",
+          "shape": [
+            2048,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "586bfc61bf84ef3e3dc5bfb06f20be3b6b59e5cfb8404894c93787a906010788"
+        },
+        "decoder_3_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.6.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "c7bf1caf156306d72ba0a97e26eb73e898d7415a01e8ef49ed227a1a7c534fdc"
+        },
+        "decoder_4_weight": {
+          "source_initializer": "onnx::MatMul_155",
+          "shape": [
+            2048,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "6e4788f11710b9cda768a8883710944335b61b77887a2d8724813dfcbaecf1db"
+        },
+        "decoder_4_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.8.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "91975c960ed6ed12bfcf452ad0999f227adc0ae4122c10f82429199e1fc2e4ab"
+        },
+        "decoder_5_weight": {
+          "source_initializer": "onnx::MatMul_156",
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "bf35f5bd198c61624d608ad23f44a0c460eba158e1d7a1432e6fd404b45dca7d"
+        },
+        "decoder_5_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.10.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "62419e7facf052a7f2edf877ddd9f35569fd3e18861b85180c44376399283133"
+        },
+        "decoder_6_weight": {
+          "source_initializer": "onnx::MatMul_157",
+          "shape": [
+            1024,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "1f0548bd56a6e8982af0cd8c5c35333e9a173ecc581c9ee3379ca9aa2779e360"
+        },
+        "decoder_6_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.12.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "8c9085d4cc0466a7afca80eac93dfa3845e6f2e09ab442083ab41605cf3c2085"
+        },
+        "decoder_7_weight": {
+          "source_initializer": "onnx::MatMul_158",
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "458bea22c581bf08aba5a14744e818d46f86638bd9fe43693158be76fc22da3b"
+        },
+        "decoder_7_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.14.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "eba5a4958cec11f4ef3b3ec97095289ecee0109247443e99d7d515f18706f77b"
+        },
+        "decoder_8_weight": {
+          "source_initializer": "onnx::MatMul_159",
+          "shape": [
+            512,
+            29
+          ],
+          "dtype": "float32",
+          "sha256": "569ca7544cb8a05652a6532a6ee50e6065eda75fd42e21ec84b6c7f19c21b2aa"
+        },
+        "decoder_8_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.16.bias",
+          "shape": [
+            29
+          ],
+          "dtype": "float32",
+          "sha256": "bfe5ef3fd42e8ad971476756e06c1ca595c65382cdbdeff59a90f85580ca05a1"
+        }
+      }
+    },
+    "sonic-v1-1": {
+      "encoder_source_sha256": "fb97de22819b2057b41459802128d91723d91a25f0ad73e7bfc41a9cf8365bae",
+      "decoder_source_sha256": "34bae8570d4a4421a5391a5c2befd745d4a02d182ec539e5f9da44c091c67509",
+      "encoder_layers": 5,
+      "decoder_layers": 9,
+      "learned_tensors": {
+        "encoder_0_weight": {
+          "source_initializer": "module.encoders.g1.module.0.weight",
+          "shape": [
+            2048,
+            640
+          ],
+          "dtype": "float32",
+          "sha256": "24986e58df0db91af560a2c4951291136a2c40cd4f41372ba6368329e006010a"
+        },
+        "encoder_0_bias": {
+          "source_initializer": "module.encoders.g1.module.0.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "01ef5077ec94c9bc850351e14404e1b82fa1840763b286b79d01f6d07cdc14d9"
+        },
+        "encoder_1_weight": {
+          "source_initializer": "module.encoders.g1.module.2.weight",
+          "shape": [
+            1024,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "df5f42d9690797c7f537ab12dd2d7497c763c520e149f3a8874ed70967c79d4f"
+        },
+        "encoder_1_bias": {
+          "source_initializer": "module.encoders.g1.module.2.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "ad3d03514d76de63396b21575374ab7415d710534d968d2885f97d99ba10b9a5"
+        },
+        "encoder_2_weight": {
+          "source_initializer": "module.encoders.g1.module.4.weight",
+          "shape": [
+            512,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "741e713bcf07f702a9fde0f626d86d02f780cdf1c8680cff18161494b316068e"
+        },
+        "encoder_2_bias": {
+          "source_initializer": "module.encoders.g1.module.4.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "b8738bd8863193f2cf8363108ab5ce26c1ed6e628e9ab49d60836d0201f3042d"
+        },
+        "encoder_3_weight": {
+          "source_initializer": "module.encoders.g1.module.6.weight",
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "31e387c4f3a9074072b174ee31660a34b71cf4f4865d398aadcf03f8e6190da9"
+        },
+        "encoder_3_bias": {
+          "source_initializer": "module.encoders.g1.module.6.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "de219659ea5260859bcefd4fe54202399369820190cc9860a949fb3cec53f6cc"
+        },
+        "encoder_4_weight": {
+          "source_initializer": "module.encoders.g1.module.8.weight",
+          "shape": [
+            64,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "bc1c44f1c8733e97184435fe5077b872994cab259b4c4e5bcdcf6e4f9cc1c1ea"
+        },
+        "encoder_4_bias": {
+          "source_initializer": "module.encoders.g1.module.8.bias",
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "sha256": "aaab2723d97ec663c50504e1a974d42f5d5581a148c6b21088d33aea1788c32a"
+        },
+        "decoder_0_weight": {
+          "source_initializer": "onnx::MatMul_151",
+          "shape": [
+            994,
+            4096
+          ],
+          "dtype": "float32",
+          "sha256": "f95ddb452ba0fc5e7cde436fac6daee427fc5cdb2864e9f29aa51580b5d38c99"
+        },
+        "decoder_0_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.0.bias",
+          "shape": [
+            4096
+          ],
+          "dtype": "float32",
+          "sha256": "35e910b3aece4c8c36feb6599972aca506ac64e2a698aaf1f63a343e3fbdd845"
+        },
+        "decoder_1_weight": {
+          "source_initializer": "onnx::MatMul_152",
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "float32",
+          "sha256": "fad1cf611c4a0e9046fb401b83bfcc08c3da41bdd1e81ebf8c70c3b14ba2203b"
+        },
+        "decoder_1_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.2.bias",
+          "shape": [
+            4096
+          ],
+          "dtype": "float32",
+          "sha256": "4f5160a100b764d0dd0d92e8830175d9533cce18e46d7960893645f5b99023aa"
+        },
+        "decoder_2_weight": {
+          "source_initializer": "onnx::MatMul_153",
+          "shape": [
+            4096,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "6141ecb4b58a92bf6fe8f4c075b17677b0e6923f3bcc24851f2b4734cf681d3d"
+        },
+        "decoder_2_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.4.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "e41ecd8d8c2a77172d3223e19a1f9ec4843cdcbe3840c1fd4d827447d5d9343c"
+        },
+        "decoder_3_weight": {
+          "source_initializer": "onnx::MatMul_154",
+          "shape": [
+            2048,
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "21ac497ea75404b310c10e9bd003f23b4e52aa55066e9fabc27d57e88d83e077"
+        },
+        "decoder_3_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.6.bias",
+          "shape": [
+            2048
+          ],
+          "dtype": "float32",
+          "sha256": "029f601384dd9286b8f9e749233b903c19705cf530f9c90d51aade86a9cdb2ef"
+        },
+        "decoder_4_weight": {
+          "source_initializer": "onnx::MatMul_155",
+          "shape": [
+            2048,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "01d851cfe9526abc7d5c90eddd46392e1287634d29301c714e327d77b2a3ef1f"
+        },
+        "decoder_4_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.8.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "65df9410804b9c7194ea5f20b09c03bf870b37b83583857afd937a6ecd8f0734"
+        },
+        "decoder_5_weight": {
+          "source_initializer": "onnx::MatMul_156",
+          "shape": [
+            1024,
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "8215195aaf50fb0dfc6da66b9e15013cf4be1d8ddc9d39d2a97bada153f8378a"
+        },
+        "decoder_5_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.10.bias",
+          "shape": [
+            1024
+          ],
+          "dtype": "float32",
+          "sha256": "7e840171d7fa7cf0e8fa5da9258918440d42fc6058e280569aeed06b18128c98"
+        },
+        "decoder_6_weight": {
+          "source_initializer": "onnx::MatMul_157",
+          "shape": [
+            1024,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "62f78c0083f4fb87162a21c6a323ae46d07b157ac6a1fbe1e9236befc2347c9d"
+        },
+        "decoder_6_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.12.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "4e20eb5a66b400dd0e82cf9d8c1d652766c3d69d43902c59576491e54dc9cb62"
+        },
+        "decoder_7_weight": {
+          "source_initializer": "onnx::MatMul_158",
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "133659e7a63ebb423536fd3f82a76d603f7d9311570d54317a3bf71ef1a6dc38"
+        },
+        "decoder_7_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.14.bias",
+          "shape": [
+            512
+          ],
+          "dtype": "float32",
+          "sha256": "604cbdf07c22abb66005e97923d52615d5a3bb1f902630185af7149981f78a80"
+        },
+        "decoder_8_weight": {
+          "source_initializer": "onnx::MatMul_159",
+          "shape": [
+            512,
+            29
+          ],
+          "dtype": "float32",
+          "sha256": "10d21e15040226f0140cdd8b71b073946d5a0d58eb8a76834ad6aacea6ce1248"
+        },
+        "decoder_8_bias": {
+          "source_initializer": "module.decoders.g1_dyn.module.16.bias",
+          "shape": [
+            29
+          ],
+          "dtype": "float32",
+          "sha256": "3f2c2a45354f5859ef122c0c564bb57c7a78aacd1d648a8f8073b8b59fc12650"
+        }
+      }
+    }
+  },
+  "raw_initializer_comparisons": {
+    "sonic-original": {
+      "all_learned_tensors_exact": true,
+      "exact_tensor_count": 24,
+      "compared_tensor_count": 24,
+      "tensors": [
+        {
+          "tensor": "decoder_0_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_0_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_1_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_1_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_2_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_2_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_3_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_3_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_4_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_4_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_5_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_5_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_6_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "decoder_6_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "encoder_0_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "encoder_0_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "encoder_1_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "encoder_1_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "encoder_2_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "encoder_2_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "encoder_3_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "encoder_3_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "encoder_4_bias",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        },
+        {
+          "tensor": "encoder_4_weight",
+          "same_shape": true,
+          "exactly_equal": true,
+          "max_abs_error": 0.0
+        }
+      ]
+    },
+    "sonic-low-latency": {
+      "all_learned_tensors_exact": false,
+      "exact_tensor_count": 0,
+      "compared_tensor_count": 28,
+      "tensors": [
+        {
+          "tensor": "decoder_0_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_0_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_1_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_1_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_2_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_2_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_3_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_3_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_4_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_4_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_5_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_5_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_6_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_6_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_7_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_7_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_8_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_8_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "encoder_0_bias",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.15521042048931122
+        },
+        {
+          "tensor": "encoder_0_weight",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 1.118441641330719
+        },
+        {
+          "tensor": "encoder_1_bias",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.10856869211420417
+        },
+        {
+          "tensor": "encoder_1_weight",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.4452646356076002
+        },
+        {
+          "tensor": "encoder_2_bias",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.08071954548358917
+        },
+        {
+          "tensor": "encoder_2_weight",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.3645958984270692
+        },
+        {
+          "tensor": "encoder_3_bias",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.11400825902819633
+        },
+        {
+          "tensor": "encoder_3_weight",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.16683299094438553
+        },
+        {
+          "tensor": "encoder_4_bias",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.08421993255615234
+        },
+        {
+          "tensor": "encoder_4_weight",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.14889969676733017
+        }
+      ]
+    },
+    "sonic-v1-1": {
+      "all_learned_tensors_exact": false,
+      "exact_tensor_count": 0,
+      "compared_tensor_count": 28,
+      "tensors": [
+        {
+          "tensor": "decoder_0_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_0_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_1_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_1_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_2_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_2_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_3_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_3_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_4_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_4_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_5_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_5_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_6_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_6_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_7_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_7_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_8_bias",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "decoder_8_weight",
+          "same_shape": false,
+          "exactly_equal": false,
+          "max_abs_error": null
+        },
+        {
+          "tensor": "encoder_0_bias",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.14590416476130486
+        },
+        {
+          "tensor": "encoder_0_weight",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 1.0622592270374298
+        },
+        {
+          "tensor": "encoder_1_bias",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.13333653286099434
+        },
+        {
+          "tensor": "encoder_1_weight",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.5647366736084223
+        },
+        {
+          "tensor": "encoder_2_bias",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.08307740837335587
+        },
+        {
+          "tensor": "encoder_2_weight",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.3351890305057168
+        },
+        {
+          "tensor": "encoder_3_bias",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.10130232572555542
+        },
+        {
+          "tensor": "encoder_3_weight",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.22964053601026535
+        },
+        {
+          "tensor": "encoder_4_bias",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.07096627354621887
+        },
+        {
+          "tensor": "encoder_4_weight",
+          "same_shape": true,
+          "exactly_equal": false,
+          "max_abs_error": 0.15219669789075851
+        }
+      ]
+    }
+  },
+  "converted_buffer_comparisons": {
+    "encoder_input_indices": {
+      "shape": [
+        640
+      ],
+      "dtype": "int64",
+      "exactly_equal": true
+    },
+    "decoder_0_bias": {
+      "shape": [
+        2048
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_0_weight": {
+      "shape": [
+        994,
+        2048
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_1_bias": {
+      "shape": [
+        2048
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_1_weight": {
+      "shape": [
+        2048,
+        2048
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_2_bias": {
+      "shape": [
+        1024
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_2_weight": {
+      "shape": [
+        2048,
+        1024
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_3_bias": {
+      "shape": [
+        1024
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_3_weight": {
+      "shape": [
+        1024,
+        1024
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_4_bias": {
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_4_weight": {
+      "shape": [
+        1024,
+        512
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_5_bias": {
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_5_weight": {
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_6_bias": {
+      "shape": [
+        29
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "decoder_6_weight": {
+      "shape": [
+        512,
+        29
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "encoder_0_bias": {
+      "shape": [
+        2048
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "encoder_0_weight": {
+      "shape": [
+        2048,
+        640
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "encoder_1_bias": {
+      "shape": [
+        1024
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "encoder_1_weight": {
+      "shape": [
+        1024,
+        2048
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "encoder_2_bias": {
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "encoder_2_weight": {
+      "shape": [
+        512,
+        1024
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "encoder_3_bias": {
+      "shape": [
+        512
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "encoder_3_weight": {
+      "shape": [
+        512,
+        512
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "encoder_4_bias": {
+      "shape": [
+        64
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "encoder_4_weight": {
+      "shape": [
+        64,
+        512
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "encoder_input_mask": {
+      "shape": [
+        640
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "quant_divisor": {
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "quant_offset": {
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "quant_scale": {
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    },
+    "quant_shift": {
+      "shape": [
+        32
+      ],
+      "dtype": "float32",
+      "exactly_equal": true
+    }
+  },
+  "converted_buffers_exact": true,
+  "converted_weights_sha256": "b50fada5c47278e0df682f23ad88e90e8f96405266061221a585bbf2780be43f",
+  "original_onnx_matched_input_cases": 17,
+  "original_onnx_matched_input_max_abs_error": {
+    "token": 0.0,
+    "action": 0.0
+  },
+  "original_onnx_all_outputs_finite": true,
+  "original_onnx_oracle": "ONNX ReferenceEvaluator, all source graph operations",
+  "deployment_equivalence": false,
+  "deployment_differences": {
+    "sonic_shared_export_adapter": "Repeats the current initial observation across history and obtains heading by normalizing quaternion z,w.",
+    "sonic_original_author_adapter": "Uses author cold StateLogger padding and heading from projected forward direction."
+  },
+  "publication_decision": "Use the author-published sonic-original files and deployment as the official default SONIC entry. Keep shared-export results outside the official leaderboard."
+}
